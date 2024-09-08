@@ -11,35 +11,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Capa_Desconectada
-{
+{  
     public partial class Form1 : Form
     {
+        CustomerRepository _customerRepository = new CustomerRepository();
         public Form1()
         {
             InitializeComponent();
         }
 
         private void btnObtenerNoTipado_Click(object sender, EventArgs e)
-        {
-            DataTable dataTable = new DataTable();
-            String selectAll = "";
-            selectAll = selectAll + "SELECT [CustomerID] " + "\n";
-            selectAll = selectAll + "      ,[CompanyName] " + "\n";
-            selectAll = selectAll + "      ,[ContactName] " + "\n";
-            selectAll = selectAll + "      ,[ContactTitle] " + "\n";
-            selectAll = selectAll + "      ,[Address] " + "\n";
-            selectAll = selectAll + "      ,[City] " + "\n";
-            selectAll = selectAll + "      ,[Region] " + "\n";
-            selectAll = selectAll + "      ,[PostalCode] " + "\n";
-            selectAll = selectAll + "      ,[Country] " + "\n";
-            selectAll = selectAll + "      ,[Phone] " + "\n";
-            selectAll = selectAll + "      ,[Fax] " + "\n";
-            selectAll = selectAll + "  FROM [dbo].[Customers]";
-
-            SqlDataAdapter adapter = 
-                new SqlDataAdapter(selectAll, conexion);
-            adapter.Fill(dataTable);
-            dgvNoTipado.DataSource = dataTable;
+        {       
+            dgvNoTipado.DataSource = _customerRepository.ObtenerTodos();
         }
     }
 }
