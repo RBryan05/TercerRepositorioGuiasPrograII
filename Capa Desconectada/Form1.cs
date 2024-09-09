@@ -21,6 +21,11 @@ namespace Capa_Desconectada
         {
             dgvNoTipado.DataSource = _customerRepository.ObtenerTodos();
         }
+        private void btnBuscarNoTipado_Click(object sender, EventArgs e)
+        {
+            string CustomerId = txtCustomerIDNoTipado.Text;
+            dgvNoTipado.DataSource = _customerRepository.ObtenerPorID(CustomerId);
+        }
         #endregion
 
         #region Tipado
