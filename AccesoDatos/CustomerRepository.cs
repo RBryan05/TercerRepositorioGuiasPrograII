@@ -67,7 +67,7 @@ namespace AccesoDatos
             }
         }
 
-        private List<Customer> ExtraerInformacionDelCliente(DataTable dataTable)
+        public List<Customer> ExtraerInformacionDelCliente(DataTable dataTable)
         {
             List<Customer> cliente = new List<Customer>();
             Customer customer = new Customer();

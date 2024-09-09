@@ -35,6 +35,16 @@ namespace Capa_Desconectada
             var customers = Adaptador.GetData();
             dgvTipado.DataSource = customers;
         }
+        private void btnBuscarTipado_Click(object sender, EventArgs e)
+        {
+            var customer = Adaptador.GetDataByCustomerID(txtCustomerIdTipado.Text);
+
+            if (customer != null)
+            {
+                var cliente = _customerRepository.ExtraerInformacionDelCliente(customer);
+                dgvTipado.DataSource = cliente;
+            }
+        }
         #endregion
         public Form1()
         {

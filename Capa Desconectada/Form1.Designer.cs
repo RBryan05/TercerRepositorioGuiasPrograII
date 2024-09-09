@@ -164,6 +164,7 @@
             this.btnBuscarTipado.TabIndex = 5;
             this.btnBuscarTipado.Text = "Buscar cliente";
             this.btnBuscarTipado.UseVisualStyleBackColor = true;
+            this.btnBuscarTipado.Click += new System.EventHandler(this.btnBuscarTipado_Click);
             // 
             // Form1
             // 
