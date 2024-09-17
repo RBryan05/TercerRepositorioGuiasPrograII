@@ -24,12 +24,28 @@ namespace Capa_Desconectada
         private void btnBuscarNoTipado_Click(object sender, EventArgs e)
         {
             string CustomerId = txtCustomerIDNoTipado.Text;
-            dgvNoTipado.DataSource = _customerRepository.ObtenerPorID(CustomerId);
+            var cliente = _customerRepository.ObtenerPorID(CustomerId);
+            if (cliente == null)
+            {
+                MessageBox.Show("El objeto es null");
+            }
+            if (cliente != null)
+            {
+                AsignarDatosATextBox(cliente);
+                var listaClientes = new List<Customer> { cliente };
+                dgvNoTipado.DataSource = listaClientes;
+            }
         }
-        private void btninsertarNoTipado_Click(object sender, EventArgs e)
+        private void btnInsertarNoTipado_Click(object sender, EventArgs e)
         {
             int insertados = _customerRepository.InsertarCliente(Cliente());
             MessageBox.Show($"Se agrego {insertados} cliente.");
+        }
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            var cliente = Cliente();
+            int actualizar = _customerRepository.ActualizarCliente(cliente);
+            MessageBox.Show($"Se actualizo {actualizar} cliente.");
         }
         #endregion
 
@@ -45,8 +61,10 @@ namespace Capa_Desconectada
             var customer = Adaptador.GetDataByCustomerID(txtCustomerIdTipado.Text);
 
             if (customer != null)
-            {
-                var cliente = _customerRepository.ExtraerInformacionDelCliente(customer);
+            {             
+                var Cliente = _customerRepository.ExtraerInformacionDelCliente(customer);
+                AsignarDatosATextBox(Cliente);
+                var cliente = new List<Customer> { Cliente };
                 dgvTipado.DataSource = cliente;
             }
         }
@@ -74,5 +92,15 @@ namespace Capa_Desconectada
             };
             return cliente;
         }
+
+        private void AsignarDatosATextBox(Customer cliente)
+        {
+            txtCustomerID.Text = cliente.CustomerID;
+            txtContactTitle.Text = cliente.ContactTitle;
+            txtContactName.Text = cliente.ContactName;
+            txtCompanyName.Text = cliente.CompanyName;
+            txtAddres.Text = cliente.Address;
+        }
+
     }
 }

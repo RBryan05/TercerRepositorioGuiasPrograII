@@ -52,6 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtAddres = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -68,7 +69,7 @@
             this.groupBox1.Controls.Add(this.dgvTipado);
             this.groupBox1.Location = new System.Drawing.Point(599, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(540, 544);
+            this.groupBox1.Size = new System.Drawing.Size(540, 598);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DataSet Tipado";
@@ -79,7 +80,7 @@
             this.btnInsertarTipado.Name = "btnInsertarTipado";
             this.btnInsertarTipado.Size = new System.Drawing.Size(159, 42);
             this.btnInsertarTipado.TabIndex = 6;
-            this.btnInsertarTipado.Text = "Insertar Tipado";
+            this.btnInsertarTipado.Text = "Insertar";
             this.btnInsertarTipado.UseVisualStyleBackColor = true;
             this.btnInsertarTipado.Click += new System.EventHandler(this.btnInsertarTipado_Click);
             // 
@@ -131,6 +132,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnActualizar);
             this.groupBox2.Controls.Add(this.btninsertarNoTipado);
             this.groupBox2.Controls.Add(this.btnBuscarNoTipado);
             this.groupBox2.Controls.Add(this.txtCustomerIDNoTipado);
@@ -139,7 +141,7 @@
             this.groupBox2.Controls.Add(this.dgvNoTipado);
             this.groupBox2.Location = new System.Drawing.Point(27, 24);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(529, 544);
+            this.groupBox2.Size = new System.Drawing.Size(529, 598);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DataSet no Tipado";
@@ -150,9 +152,9 @@
             this.btninsertarNoTipado.Name = "btninsertarNoTipado";
             this.btninsertarNoTipado.Size = new System.Drawing.Size(159, 42);
             this.btninsertarNoTipado.TabIndex = 5;
-            this.btninsertarNoTipado.Text = "Insertar No Tipado";
+            this.btninsertarNoTipado.Text = "Insertar";
             this.btninsertarNoTipado.UseVisualStyleBackColor = true;
-            this.btninsertarNoTipado.Click += new System.EventHandler(this.btninsertarNoTipado_Click);
+            this.btninsertarNoTipado.Click += new System.EventHandler(this.btnInsertarNoTipado_Click);
             // 
             // btnBuscarNoTipado
             // 
@@ -280,11 +282,21 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Address";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(185, 539);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(159, 42);
+            this.btnActualizar.TabIndex = 6;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1536, 588);
+            this.ClientSize = new System.Drawing.Size(1536, 658);
             this.Controls.Add(this.txtAddres);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtContactTitle);
@@ -336,6 +348,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnInsertarTipado;
         private System.Windows.Forms.Button btninsertarNoTipado;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }
 

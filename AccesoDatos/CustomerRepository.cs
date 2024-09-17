@@ -35,7 +35,7 @@ namespace AccesoDatos
             return dataTable;
         }
 
-        public List<Customer> ObtenerPorID(string id)
+        public Customer ObtenerPorID(string id)
         {
             DataTable dataTable = new DataTable();
             using (var conexion = DataBase.GetSqlConnection())
@@ -67,9 +67,8 @@ namespace AccesoDatos
             }
         }
 
-        public List<Customer> ExtraerInformacionDelCliente(DataTable dataTable)
+        public Customer ExtraerInformacionDelCliente(DataTable dataTable)
         {
-            List<Customer> cliente = new List<Customer>();
             Customer customer = new Customer();
             foreach (DataRow fila in dataTable.Rows)
             {
@@ -85,9 +84,8 @@ namespace AccesoDatos
                 customer.Phone = fila.Field<String>("Phone");
                 customer.Fax = fila.Field<String>("Fax");
             }
-            cliente.Add(customer);
 
-            return cliente;
+            return customer;
         }
 
         public int InsertarCliente(Customer customer)
@@ -111,19 +109,51 @@ namespace AccesoDatos
 
                 using(SqlCommand comando = new SqlCommand(insertInto, conexion)) 
                 {
-                    comando.Parameters.AddWithValue("CustomerID", customer.CustomerID);
-                    comando.Parameters.AddWithValue("CompanyName", customer.CompanyName);
-                    comando.Parameters.AddWithValue("ContactName", customer.ContactName);
-                    comando.Parameters.AddWithValue("ContactTitle", customer.ContactTitle);
-                    comando.Parameters.AddWithValue("Address", customer.Address);
+                    SqlCommand comandoConDatos = ParametrosSql(comando, customer);
 
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando)
+                    SqlDataAdapter adaptador = new SqlDataAdapter()
                     {
-                        InsertCommand = comando
+                        InsertCommand = comandoConDatos
                     };
                     return adaptador.InsertCommand.ExecuteNonQuery();
                 }
             }
+        }
+
+        public int ActualizarCliente(Customer cliente)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String update = "";
+                update = update + "UPDATE [dbo].[Customers] " + "\n";
+                update = update + "   SET [CustomerID] = @CustomerID " + "\n";
+                update = update + "      ,[CompanyName] = @CompanyName " + "\n";
+                update = update + "      ,[ContactName] = @ContactName " + "\n";
+                update = update + "      ,[ContactTitle] = @ContactTitle " + "\n";
+                update = update + "      ,[Address] = @Address " + "\n";
+                update = update + " WHERE [CustomerID] = @CustomerID";
+
+                using(SqlCommand comando = new SqlCommand(update, conexion)) 
+                {
+                    SqlCommand comandoConDatos = ParametrosSql(comando, cliente);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter()
+                    {
+                        UpdateCommand = comandoConDatos,
+                    };
+                    return adaptador.UpdateCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private SqlCommand ParametrosSql(SqlCommand comando, Customer cliente)
+        {
+            comando.Parameters.AddWithValue("CustomerID", cliente.CustomerID);
+            comando.Parameters.AddWithValue("CompanyName", cliente.CompanyName);
+            comando.Parameters.AddWithValue("ContactName", cliente.ContactName);
+            comando.Parameters.AddWithValue("ContactTitle", cliente.ContactTitle);
+            comando.Parameters.AddWithValue("Address", cliente.Address);
+            return comando;
         }
     }
 }
