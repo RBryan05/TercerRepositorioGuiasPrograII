@@ -26,6 +26,11 @@ namespace Capa_Desconectada
             string CustomerId = txtCustomerIDNoTipado.Text;
             dgvNoTipado.DataSource = _customerRepository.ObtenerPorID(CustomerId);
         }
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            int insertados = _customerRepository.InsertarCliente(Cliente());
+            MessageBox.Show($"Se agrego {insertados} cliente.");
+        }
         #endregion
 
         #region Tipado
@@ -50,5 +55,20 @@ namespace Capa_Desconectada
         {
             InitializeComponent();
         }
+
+        private Customer Cliente()
+        {
+            var cliente = new Customer
+            {
+                CompanyName = txtCompanyName.Text,
+                ContactName = txtContactName.Text,
+                CustomerID = txtCustomerID.Text,
+                ContactTitle = txtContactTitle.Text,
+                Address = txtAddres.Text
+            };
+            return cliente;
+        }
+
+        
     }
 }

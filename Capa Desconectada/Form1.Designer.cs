@@ -29,17 +29,28 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarTipado = new System.Windows.Forms.Button();
+            this.txtCustomerIdTipado = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnObtenerTipados = new System.Windows.Forms.Button();
             this.dgvTipado = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarNoTipado = new System.Windows.Forms.Button();
             this.txtCustomerIDNoTipado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnObtenerNoTipado = new System.Windows.Forms.Button();
             this.dgvNoTipado = new System.Windows.Forms.DataGridView();
-            this.txtCustomerIdTipado = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscarNoTipado = new System.Windows.Forms.Button();
-            this.btnBuscarTipado = new System.Windows.Forms.Button();
+            this.txtCustomerID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtContactName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtContactTitle = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAddres = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnInsertar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -59,6 +70,32 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DataSet Tipado";
+            // 
+            // btnBuscarTipado
+            // 
+            this.btnBuscarTipado.Location = new System.Drawing.Point(142, 477);
+            this.btnBuscarTipado.Name = "btnBuscarTipado";
+            this.btnBuscarTipado.Size = new System.Drawing.Size(271, 42);
+            this.btnBuscarTipado.TabIndex = 5;
+            this.btnBuscarTipado.Text = "Buscar cliente";
+            this.btnBuscarTipado.UseVisualStyleBackColor = true;
+            this.btnBuscarTipado.Click += new System.EventHandler(this.btnBuscarTipado_Click);
+            // 
+            // txtCustomerIdTipado
+            // 
+            this.txtCustomerIdTipado.Location = new System.Drawing.Point(239, 428);
+            this.txtCustomerIdTipado.Name = "txtCustomerIdTipado";
+            this.txtCustomerIdTipado.Size = new System.Drawing.Size(174, 26);
+            this.txtCustomerIdTipado.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(138, 431);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Customer ID";
             // 
             // btnObtenerTipados
             // 
@@ -94,6 +131,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DataSet no Tipado";
             // 
+            // btnBuscarNoTipado
+            // 
+            this.btnBuscarNoTipado.Location = new System.Drawing.Point(136, 477);
+            this.btnBuscarNoTipado.Name = "btnBuscarNoTipado";
+            this.btnBuscarNoTipado.Size = new System.Drawing.Size(271, 42);
+            this.btnBuscarNoTipado.TabIndex = 4;
+            this.btnBuscarNoTipado.Text = "Buscar cliente";
+            this.btnBuscarNoTipado.UseVisualStyleBackColor = true;
+            this.btnBuscarNoTipado.Click += new System.EventHandler(this.btnBuscarNoTipado_Click);
+            // 
             // txtCustomerIDNoTipado
             // 
             this.txtCustomerIDNoTipado.Location = new System.Drawing.Point(233, 428);
@@ -106,9 +153,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(132, 431);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "CustomerID";
+            this.label1.Text = "Customer ID";
             // 
             // btnObtenerNoTipado
             // 
@@ -130,47 +177,112 @@
             this.dgvNoTipado.Size = new System.Drawing.Size(494, 297);
             this.dgvNoTipado.TabIndex = 0;
             // 
-            // txtCustomerIdTipado
+            // txtCustomerID
             // 
-            this.txtCustomerIdTipado.Location = new System.Drawing.Point(239, 428);
-            this.txtCustomerIdTipado.Name = "txtCustomerIdTipado";
-            this.txtCustomerIdTipado.Size = new System.Drawing.Size(174, 26);
-            this.txtCustomerIdTipado.TabIndex = 5;
+            this.txtCustomerID.Location = new System.Drawing.Point(1288, 37);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.Size = new System.Drawing.Size(222, 26);
+            this.txtCustomerID.TabIndex = 6;
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(138, 431);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "CustomerID";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1160, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Customer ID";
             // 
-            // btnBuscarNoTipado
+            // txtCompanyName
             // 
-            this.btnBuscarNoTipado.Location = new System.Drawing.Point(136, 477);
-            this.btnBuscarNoTipado.Name = "btnBuscarNoTipado";
-            this.btnBuscarNoTipado.Size = new System.Drawing.Size(271, 42);
-            this.btnBuscarNoTipado.TabIndex = 4;
-            this.btnBuscarNoTipado.Text = "Buscar cliente";
-            this.btnBuscarNoTipado.UseVisualStyleBackColor = true;
-            this.btnBuscarNoTipado.Click += new System.EventHandler(this.btnBuscarNoTipado_Click);
+            this.txtCompanyName.Location = new System.Drawing.Point(1288, 83);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(222, 26);
+            this.txtCompanyName.TabIndex = 8;
             // 
-            // btnBuscarTipado
+            // label4
             // 
-            this.btnBuscarTipado.Location = new System.Drawing.Point(142, 477);
-            this.btnBuscarTipado.Name = "btnBuscarTipado";
-            this.btnBuscarTipado.Size = new System.Drawing.Size(271, 42);
-            this.btnBuscarTipado.TabIndex = 5;
-            this.btnBuscarTipado.Text = "Buscar cliente";
-            this.btnBuscarTipado.UseVisualStyleBackColor = true;
-            this.btnBuscarTipado.Click += new System.EventHandler(this.btnBuscarTipado_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1160, 86);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Company Name";
+            // 
+            // txtContactName
+            // 
+            this.txtContactName.Location = new System.Drawing.Point(1288, 130);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(222, 26);
+            this.txtContactName.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1160, 133);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Contact Name";
+            // 
+            // txtContactTitle
+            // 
+            this.txtContactTitle.Location = new System.Drawing.Point(1288, 173);
+            this.txtContactTitle.Name = "txtContactTitle";
+            this.txtContactTitle.Size = new System.Drawing.Size(222, 26);
+            this.txtContactTitle.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1160, 176);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Contact Title";
+            // 
+            // txtAddres
+            // 
+            this.txtAddres.Location = new System.Drawing.Point(1288, 223);
+            this.txtAddres.Name = "txtAddres";
+            this.txtAddres.Size = new System.Drawing.Size(222, 26);
+            this.txtAddres.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1160, 226);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 20);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Address";
+            // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Location = new System.Drawing.Point(1210, 295);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(271, 42);
+            this.btnInsertar.TabIndex = 6;
+            this.btnInsertar.Text = "Agregar cliente";
+            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 658);
+            this.ClientSize = new System.Drawing.Size(1536, 658);
+            this.Controls.Add(this.btnInsertar);
+            this.Controls.Add(this.txtAddres);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtContactTitle);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtContactName);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtCompanyName);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtCustomerID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -182,6 +294,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNoTipado)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -199,6 +312,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBuscarTipado;
         private System.Windows.Forms.Button btnBuscarNoTipado;
+        private System.Windows.Forms.TextBox txtCustomerID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCompanyName;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtContactName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtContactTitle;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtAddres;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnInsertar;
     }
 }
 
