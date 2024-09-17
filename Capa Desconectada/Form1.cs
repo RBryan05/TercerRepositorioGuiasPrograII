@@ -26,7 +26,7 @@ namespace Capa_Desconectada
             string CustomerId = txtCustomerIDNoTipado.Text;
             dgvNoTipado.DataSource = _customerRepository.ObtenerPorID(CustomerId);
         }
-        private void btnInsertar_Click(object sender, EventArgs e)
+        private void btninsertarNoTipado_Click(object sender, EventArgs e)
         {
             int insertados = _customerRepository.InsertarCliente(Cliente());
             MessageBox.Show($"Se agrego {insertados} cliente.");
@@ -50,6 +50,12 @@ namespace Capa_Desconectada
                 dgvTipado.DataSource = cliente;
             }
         }
+        private void btnInsertarTipado_Click(object sender, EventArgs e)
+        {
+            var insertar = Adaptador.Insert(Cliente().CustomerID, Cliente().CompanyName, 
+                Cliente().ContactName, Cliente().ContactTitle, Cliente().Address);
+            MessageBox.Show($"Se agrego {insertar} cliente.");
+        }
         #endregion
         public Form1()
         {
@@ -68,7 +74,5 @@ namespace Capa_Desconectada
             };
             return cliente;
         }
-
-        
     }
 }

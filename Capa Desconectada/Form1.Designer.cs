@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnInsertarTipado = new System.Windows.Forms.Button();
             this.btnBuscarTipado = new System.Windows.Forms.Button();
             this.txtCustomerIdTipado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnObtenerTipados = new System.Windows.Forms.Button();
             this.dgvTipado = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btninsertarNoTipado = new System.Windows.Forms.Button();
             this.btnBuscarNoTipado = new System.Windows.Forms.Button();
             this.txtCustomerIDNoTipado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,7 +52,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtAddres = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnInsertar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnInsertarTipado);
             this.groupBox1.Controls.Add(this.btnBuscarTipado);
             this.groupBox1.Controls.Add(this.txtCustomerIdTipado);
             this.groupBox1.Controls.Add(this.label2);
@@ -66,16 +68,26 @@
             this.groupBox1.Controls.Add(this.dgvTipado);
             this.groupBox1.Location = new System.Drawing.Point(599, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(540, 600);
+            this.groupBox1.Size = new System.Drawing.Size(540, 544);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DataSet Tipado";
             // 
+            // btnInsertarTipado
+            // 
+            this.btnInsertarTipado.Location = new System.Drawing.Point(360, 477);
+            this.btnInsertarTipado.Name = "btnInsertarTipado";
+            this.btnInsertarTipado.Size = new System.Drawing.Size(159, 42);
+            this.btnInsertarTipado.TabIndex = 6;
+            this.btnInsertarTipado.Text = "Insertar Tipado";
+            this.btnInsertarTipado.UseVisualStyleBackColor = true;
+            this.btnInsertarTipado.Click += new System.EventHandler(this.btnInsertarTipado_Click);
+            // 
             // btnBuscarTipado
             // 
-            this.btnBuscarTipado.Location = new System.Drawing.Point(142, 477);
+            this.btnBuscarTipado.Location = new System.Drawing.Point(25, 477);
             this.btnBuscarTipado.Name = "btnBuscarTipado";
-            this.btnBuscarTipado.Size = new System.Drawing.Size(271, 42);
+            this.btnBuscarTipado.Size = new System.Drawing.Size(159, 42);
             this.btnBuscarTipado.TabIndex = 5;
             this.btnBuscarTipado.Text = "Buscar cliente";
             this.btnBuscarTipado.UseVisualStyleBackColor = true;
@@ -119,6 +131,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btninsertarNoTipado);
             this.groupBox2.Controls.Add(this.btnBuscarNoTipado);
             this.groupBox2.Controls.Add(this.txtCustomerIDNoTipado);
             this.groupBox2.Controls.Add(this.label1);
@@ -126,16 +139,26 @@
             this.groupBox2.Controls.Add(this.dgvNoTipado);
             this.groupBox2.Location = new System.Drawing.Point(27, 24);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(529, 600);
+            this.groupBox2.Size = new System.Drawing.Size(529, 544);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DataSet no Tipado";
             // 
+            // btninsertarNoTipado
+            // 
+            this.btninsertarNoTipado.Location = new System.Drawing.Point(352, 477);
+            this.btninsertarNoTipado.Name = "btninsertarNoTipado";
+            this.btninsertarNoTipado.Size = new System.Drawing.Size(159, 42);
+            this.btninsertarNoTipado.TabIndex = 5;
+            this.btninsertarNoTipado.Text = "Insertar No Tipado";
+            this.btninsertarNoTipado.UseVisualStyleBackColor = true;
+            this.btninsertarNoTipado.Click += new System.EventHandler(this.btninsertarNoTipado_Click);
+            // 
             // btnBuscarNoTipado
             // 
-            this.btnBuscarNoTipado.Location = new System.Drawing.Point(136, 477);
+            this.btnBuscarNoTipado.Location = new System.Drawing.Point(17, 477);
             this.btnBuscarNoTipado.Name = "btnBuscarNoTipado";
-            this.btnBuscarNoTipado.Size = new System.Drawing.Size(271, 42);
+            this.btnBuscarNoTipado.Size = new System.Drawing.Size(159, 42);
             this.btnBuscarNoTipado.TabIndex = 4;
             this.btnBuscarNoTipado.Text = "Buscar cliente";
             this.btnBuscarNoTipado.UseVisualStyleBackColor = true;
@@ -257,22 +280,11 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Address";
             // 
-            // btnInsertar
-            // 
-            this.btnInsertar.Location = new System.Drawing.Point(1210, 295);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(271, 42);
-            this.btnInsertar.TabIndex = 6;
-            this.btnInsertar.Text = "Agregar cliente";
-            this.btnInsertar.UseVisualStyleBackColor = true;
-            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1536, 658);
-            this.Controls.Add(this.btnInsertar);
+            this.ClientSize = new System.Drawing.Size(1536, 588);
             this.Controls.Add(this.txtAddres);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtContactTitle);
@@ -322,7 +334,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtAddres;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnInsertar;
+        private System.Windows.Forms.Button btnInsertarTipado;
+        private System.Windows.Forms.Button btninsertarNoTipado;
     }
 }
 
