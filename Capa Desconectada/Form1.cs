@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Capa_Desconectada
-{  
+{
     public partial class Form1 : Form
     {
         #region No Tipado
@@ -61,7 +61,7 @@ namespace Capa_Desconectada
             var customer = Adaptador.GetDataByCustomerID(txtCustomerIdTipado.Text);
 
             if (customer != null)
-            {             
+            {
                 var Cliente = _customerRepository.ExtraerInformacionDelCliente(customer);
                 AsignarDatosATextBox(Cliente);
                 var cliente = new List<Customer> { Cliente };
@@ -70,9 +70,47 @@ namespace Capa_Desconectada
         }
         private void btnInsertarTipado_Click(object sender, EventArgs e)
         {
-            var insertar = Adaptador.Insert(Cliente().CustomerID, Cliente().CompanyName, 
+            var insertar = Adaptador.Insert(Cliente().CustomerID, Cliente().CompanyName,
                 Cliente().ContactName, Cliente().ContactTitle, Cliente().Address);
             MessageBox.Show($"Se agrego {insertar} cliente.");
+        }
+        private void btnActualizarTipado_Click(object sender, EventArgs e)
+        {
+            var fila = Adaptador.GetDataByCustomerID(txtCustomerID.Text);
+
+            if (fila != null)
+            {
+                var datoOriginal = _customerRepository.ExtraerInformacionDelCliente(fila);
+                var datosModificados = Cliente();
+
+                int resultado = Adaptador.Update(
+                    datosModificados.CompanyName,
+                    datosModificados.ContactName,
+                    datosModificados.ContactTitle,
+                    datosModificados.Address,
+                    datosModificados.City,
+                    datosModificados.Region,
+                    datosModificados.PostalCode,
+                    datosModificados.Country,
+                    datosModificados.Phone,
+                    datosModificados.Fax,
+                    datoOriginal.CustomerID,
+                    datoOriginal.CompanyName,
+                    datoOriginal.ContactName,
+                    datoOriginal.ContactTitle,
+                    datoOriginal.Address,
+                    datoOriginal.City,
+                    datoOriginal.Region,
+                    datoOriginal.PostalCode,
+                    datoOriginal.Country,
+                    datoOriginal.Phone,
+                    datoOriginal.Fax
+                    );
+                if(resultado != 0)
+                {
+                    dgvTipado.DataSource = Adaptador.GetData();
+                }
+            }
         }
         #endregion
         public Form1()
@@ -101,6 +139,5 @@ namespace Capa_Desconectada
             txtCompanyName.Text = cliente.CompanyName;
             txtAddres.Text = cliente.Address;
         }
-
     }
 }
