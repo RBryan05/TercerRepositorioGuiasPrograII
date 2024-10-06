@@ -70,7 +70,7 @@ namespace Capa_Desconectada
         }
         private void btnInsertarTipado_Click(object sender, EventArgs e)
         {
-            var insertar = Adaptador.Insert(Cliente().CustomerID, Cliente().CompanyName,
+            var insertar = Adaptador.InsertarCliente(Cliente().CustomerID, Cliente().CompanyName,
                 Cliente().ContactName, Cliente().ContactTitle, Cliente().Address);
             MessageBox.Show($"Se agrego {insertar} cliente.");
         }
@@ -83,30 +83,37 @@ namespace Capa_Desconectada
                 var datoOriginal = _customerRepository.ExtraerInformacionDelCliente(fila);
                 var datosModificados = Cliente();
 
-                int resultado = Adaptador.Update(
+                //int resultado = Adaptador.Update(
+                //    datosModificados.CompanyName,
+                //    datosModificados.ContactName,
+                //    datosModificados.ContactTitle,
+                //    datosModificados.Address,
+                //    datosModificados.City,
+                //    datosModificados.Region,
+                //    datosModificados.PostalCode,
+                //    datosModificados.Country,
+                //    datosModificados.Phone,
+                //    datosModificados.Fax,
+                //    datoOriginal.CustomerID,
+                //    datoOriginal.CompanyName,
+                //    datoOriginal.ContactName,
+                //    datoOriginal.ContactTitle,
+                //    datoOriginal.Address,
+                //    datoOriginal.City,
+                //    datoOriginal.Region,
+                //    datoOriginal.PostalCode,
+                //    datoOriginal.Country,
+                //    datoOriginal.Phone,
+                //    datoOriginal.Fax
+                //    );
+
+                int resultado = Adaptador.ActualizarCliente(
                     datosModificados.CompanyName,
                     datosModificados.ContactName,
                     datosModificados.ContactTitle,
                     datosModificados.Address,
-                    datosModificados.City,
-                    datosModificados.Region,
-                    datosModificados.PostalCode,
-                    datosModificados.Country,
-                    datosModificados.Phone,
-                    datosModificados.Fax,
-                    datoOriginal.CustomerID,
-                    datoOriginal.CompanyName,
-                    datoOriginal.ContactName,
-                    datoOriginal.ContactTitle,
-                    datoOriginal.Address,
-                    datoOriginal.City,
-                    datoOriginal.Region,
-                    datoOriginal.PostalCode,
-                    datoOriginal.Country,
-                    datoOriginal.Phone,
-                    datoOriginal.Fax
-                    );
-                if(resultado != 0)
+                    datoOriginal.CustomerID);
+                if (resultado != 0)
                 {
                     dgvTipado.DataSource = Adaptador.GetData();
                 }
