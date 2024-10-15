@@ -119,6 +119,12 @@ namespace Capa_Desconectada
                 }
             }
         }
+
+        private void btnEliminarTipado_Click(object sender, EventArgs e)
+        {
+            int filasAfectada = Adaptador.EliminarCliente(txtCustomerID.Text);
+            MessageBox.Show($"{filasAfectada} filas eliminadas.");
+        }
         #endregion
         public Form1()
         {

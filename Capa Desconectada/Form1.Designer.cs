@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnActualizarTipado = new System.Windows.Forms.Button();
             this.btnInsertarTipado = new System.Windows.Forms.Button();
             this.btnBuscarTipado = new System.Windows.Forms.Button();
             this.txtCustomerIdTipado = new System.Windows.Forms.TextBox();
@@ -53,7 +54,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtAddres = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnActualizarTipado = new System.Windows.Forms.Button();
+            this.btnEliminarTipado = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminarTipado);
             this.groupBox1.Controls.Add(this.btnActualizarTipado);
             this.groupBox1.Controls.Add(this.btnInsertarTipado);
             this.groupBox1.Controls.Add(this.btnBuscarTipado);
@@ -75,6 +77,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DataSet Tipado";
+            // 
+            // btnActualizarTipado
+            // 
+            this.btnActualizarTipado.Location = new System.Drawing.Point(25, 539);
+            this.btnActualizarTipado.Name = "btnActualizarTipado";
+            this.btnActualizarTipado.Size = new System.Drawing.Size(159, 42);
+            this.btnActualizarTipado.TabIndex = 7;
+            this.btnActualizarTipado.Text = "Actualizar";
+            this.btnActualizarTipado.UseVisualStyleBackColor = true;
+            this.btnActualizarTipado.Click += new System.EventHandler(this.btnActualizarTipado_Click);
             // 
             // btnInsertarTipado
             // 
@@ -294,15 +306,15 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Address";
             // 
-            // btnActualizarTipado
+            // btnEliminarTipado
             // 
-            this.btnActualizarTipado.Location = new System.Drawing.Point(195, 539);
-            this.btnActualizarTipado.Name = "btnActualizarTipado";
-            this.btnActualizarTipado.Size = new System.Drawing.Size(159, 42);
-            this.btnActualizarTipado.TabIndex = 7;
-            this.btnActualizarTipado.Text = "Actualizar";
-            this.btnActualizarTipado.UseVisualStyleBackColor = true;
-            this.btnActualizarTipado.Click += new System.EventHandler(this.btnActualizarTipado_Click);
+            this.btnEliminarTipado.Location = new System.Drawing.Point(360, 539);
+            this.btnEliminarTipado.Name = "btnEliminarTipado";
+            this.btnEliminarTipado.Size = new System.Drawing.Size(159, 42);
+            this.btnEliminarTipado.TabIndex = 8;
+            this.btnEliminarTipado.Text = "Eliminar";
+            this.btnEliminarTipado.UseVisualStyleBackColor = true;
+            this.btnEliminarTipado.Click += new System.EventHandler(this.btnEliminarTipado_Click);
             // 
             // Form1
             // 
@@ -362,6 +374,7 @@
         private System.Windows.Forms.Button btninsertarNoTipado;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnActualizarTipado;
+        private System.Windows.Forms.Button btnEliminarTipado;
     }
 }
 
