@@ -155,5 +155,24 @@ namespace AccesoDatos
             comando.Parameters.AddWithValue("Address", cliente.Address);
             return comando;
         }
+
+        public int EliminarClinete(string clienteID)
+        {
+            using(var conexion = DataBase.GetSqlConnection())
+            {
+                String delete = "";
+                delete = delete + "DELETE FROM [dbo].[Customers] " + "\n";
+                delete = delete + "      WHERE CustomerID = @CustomerID";
+
+                using (var comando = new SqlCommand(delete, conexion))
+                {
+                    comando.Parameters.AddWithValue("CustomerID", clienteID);
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.DeleteCommand = comando;
+                    var eliminados = adapter.DeleteCommand.ExecuteNonQuery();
+                    return eliminados;
+                }
+            }
+        }
     }
 }

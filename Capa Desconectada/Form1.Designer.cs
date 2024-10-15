@@ -55,6 +55,7 @@
             this.txtAddres = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnEliminarTipado = new System.Windows.Forms.Button();
+            this.btnEliminarNoTipado = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -146,6 +147,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnEliminarNoTipado);
             this.groupBox2.Controls.Add(this.btnActualizar);
             this.groupBox2.Controls.Add(this.btninsertarNoTipado);
             this.groupBox2.Controls.Add(this.btnBuscarNoTipado);
@@ -162,7 +164,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(183, 539);
+            this.btnActualizar.Location = new System.Drawing.Point(17, 539);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(159, 42);
             this.btnActualizar.TabIndex = 6;
@@ -316,6 +318,16 @@
             this.btnEliminarTipado.UseVisualStyleBackColor = true;
             this.btnEliminarTipado.Click += new System.EventHandler(this.btnEliminarTipado_Click);
             // 
+            // btnEliminarNoTipado
+            // 
+            this.btnEliminarNoTipado.Location = new System.Drawing.Point(352, 539);
+            this.btnEliminarNoTipado.Name = "btnEliminarNoTipado";
+            this.btnEliminarNoTipado.Size = new System.Drawing.Size(159, 42);
+            this.btnEliminarNoTipado.TabIndex = 7;
+            this.btnEliminarNoTipado.Text = "Eliminar";
+            this.btnEliminarNoTipado.UseVisualStyleBackColor = true;
+            this.btnEliminarNoTipado.Click += new System.EventHandler(this.btnEliminarNoTipado_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -375,6 +387,7 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnActualizarTipado;
         private System.Windows.Forms.Button btnEliminarTipado;
+        private System.Windows.Forms.Button btnEliminarNoTipado;
     }
 }
 

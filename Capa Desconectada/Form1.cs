@@ -47,6 +47,12 @@ namespace Capa_Desconectada
             int actualizar = _customerRepository.ActualizarCliente(cliente);
             MessageBox.Show($"Se actualizo {actualizar} cliente.");
         }
+
+        private void btnEliminarNoTipado_Click(object sender, EventArgs e)
+        {
+            int eliminados = _customerRepository.EliminarClinete(txtCustomerID.Text);
+            MessageBox.Show($"{eliminados} fila/s afectada/s");
+        }
         #endregion
 
         #region Tipado
